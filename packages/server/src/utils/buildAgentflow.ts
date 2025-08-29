@@ -393,7 +393,7 @@ export const resolveVariables = async (
             const paramValue = paramsObj[key]
             const isAcceptVariable = reactFlowNodeData.inputParams.find((param) => param.name === key)?.acceptVariable ?? false
             /*if (isAcceptVariable) {*/
-            if (isAcceptVariable || key === 'agentTools')
+            if (isAcceptVariable || key === 'agentTools'){
                 paramsObj[key] = await resolveNodeReference(paramValue)
             }
         }
